@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "./Button";
 
 export const Loading = styled.div`
     /* .loading-container{ */
@@ -79,5 +80,9 @@ export const Wrap = styled.section`
             text-transform: capitalize;
         }
     }
+`
 
+export const Buttons = styled.button`
+    border: 1px;
+    border-radius: 50px;
 `

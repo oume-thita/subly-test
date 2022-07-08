@@ -1,6 +1,8 @@
 import classNames from "classnames"
-import React from "react"
+import { initial } from "cypress/types/lodash"
+import React, { useState } from "react"
 import { IMedium } from "../types"
+import Button from "./Button"
 import LoadingProgress from "./LoadingProgress"
 import { Wrap } from "./styles"
 
@@ -11,6 +13,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ medium, progress = 70 }: CardProps) => {
   const { name, cover, languages, status, errorMessage } = medium
+  const [isMouseInside, setIsMouseInside] = useState<boolean>()
 
   const componentStyle = classNames("card-status", {
     ready: status === "ready",
@@ -19,10 +22,7 @@ const Card: React.FC<CardProps> = ({ medium, progress = 70 }: CardProps) => {
   })
 
   return (
-    <Wrap
-      onMouseEnter={() => console.log("Over")}
-      onMouseLeave={() => console.log("leave")}
-    >
+    <Wrap onMouseLeave={() => console.log("leave")}>
       <div className="cart-container">
         {status === "error" && (
           <div className={componentStyle}>{errorMessage}</div>
@@ -40,7 +40,16 @@ const Card: React.FC<CardProps> = ({ medium, progress = 70 }: CardProps) => {
           <div
             className={componentStyle}
             style={{ backgroundImage: `url(${cover})` }}
-          />
+            onMouseEnter={() => setIsMouseInside(true)}
+            onMouseLeave={() => setIsMouseInside(false)}
+          >
+            {isMouseInside ? (
+              <div>
+                <h1>{languages.length}</h1>
+                <Button text="edit" />
+              </div>
+            ) : null}
+          </div>
         )}
         <div className="cart-info">
           <h1>{name}</h1>
