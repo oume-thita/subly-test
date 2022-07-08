@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { fetchMedia } from "../api";
+import Card from "../components/Card";
 import { IMedium } from "../types";
 
+// interface IProps {
+//     medium: IMedium[];
+// }
+
 const HomePage = () => {
-    const [medium, setMedium] = useState<IMedium[]>([]);
+    const [mediums, setMedium] = useState<IMedium[]>([]);
 
     const getMedia = async () => {
         const data = await fetchMedia()
@@ -15,10 +20,10 @@ const HomePage = () => {
 
     return(
         <div>
-            {medium?.map((m) => {
-                return <div>{m.name}</div>
+            {mediums?.map((m) => {
+                return <Card key={m.id} medium={m} />
             })}
-        </div>
+        </div>        
     )
 }
 

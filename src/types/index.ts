@@ -4,6 +4,7 @@ export interface IMedium {
     cover: string;
     languages: string[];
     status: string;
+    errorMessage:string;
     createdAt: string;
     updatedAt: string;
 }
