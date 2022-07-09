@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/subly-test/static/css/main.4c4f92eb.css",
+    "main.js": "/subly-test/static/js/main.9f86905c.js",
+    "static/js/787.4494fbf0.chunk.js": "/subly-test/static/js/787.4494fbf0.chunk.js",
+    "index.html": "/subly-test/index.html",
+    "main.4c4f92eb.css.map": "/subly-test/static/css/main.4c4f92eb.css.map",
+    "main.9f86905c.js.map": "/subly-test/static/js/main.9f86905c.js.map",
+    "787.4494fbf0.chunk.js.map": "/subly-test/static/js/787.4494fbf0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4c4f92eb.css",
+    "static/js/main.9f86905c.js"
+  ]
+}
