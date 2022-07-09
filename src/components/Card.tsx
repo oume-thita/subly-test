@@ -22,8 +22,8 @@ const Card: React.FC<CardProps> = ({ medium, progress = 70 }: CardProps) => {
   })
 
   return (
-    <Wrap onMouseLeave={() => console.log("leave")}>
-      <div className="cart-container">
+    <Wrap>
+      <div className="card-container">
         {status === "error" && (
           <div className={componentStyle}>{errorMessage}</div>
         )}
@@ -43,12 +43,12 @@ const Card: React.FC<CardProps> = ({ medium, progress = 70 }: CardProps) => {
             onMouseEnter={() => setIsMouseInside(true)}
             onMouseLeave={() => setIsMouseInside(false)}
           >
-            {isMouseInside ? (
+            {isMouseInside && (
               <div>
                 <div className="language">{languages.length} languages</div>
                 <Button text="Edit" />
               </div>
-            ) : null}
+            )}
           </div>
         )}
         <div className="cart-info">

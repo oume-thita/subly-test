@@ -1,4 +1,5 @@
 import React from "react"
+import { Dropdowns } from "./styles"
 
 interface IDropdwnProps {
   label: string
@@ -15,14 +16,16 @@ const Dropdown = ({ label, options, value, onChange }: IDropdwnProps) => {
     onChange(event.target.value)
   }
   return (
-    <label>
-      {label}
-      <select value={value} onChange={handleChange}>
-        {options.map((option) => (
-          <option value={option.value}>{option.label}</option>
-        ))}
-      </select>
-    </label>
+    <Dropdowns>
+      <label>
+        <h1>{label}</h1>
+        <select value={value} onChange={handleChange}>
+          {options.map((option) => (
+            <option value={option.value}>{option.label}</option>
+          ))}
+        </select>
+      </label>
+    </Dropdowns>
   )
 }
 

@@ -25,12 +25,8 @@ export const Loading = styled.div`
 `
 
 export const Wrap = styled.section`
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
     .cart-info{
-        display: block;
         margin: 10px;
     }
 
@@ -55,8 +51,9 @@ export const Wrap = styled.section`
         opacity: 0.5;
     }
 
-    .cart-container {
-        position: relative;
+    .card-container {
+        display: block;
+
         height: 300px;
         width: 400px;
         background-color: white;
@@ -108,5 +105,14 @@ export const Buttons = styled.button`
     p {
         text-align: center;
         font-size: 25px;
+    }
+`
+
+export const Dropdowns = styled.div`
+    height: 50px;
+    width: 100px;    
+
+    h1 {
+        color: black;
     }
 `
