@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({ medium, progress = 70 }: CardProps) => {
             className={componentStyle}
             style={{ backgroundImage: `url(${cover})` }}
           >
-            <h2>Transcrining subtitles</h2>
+            <h1>Transcrining subtitles</h1>
             <LoadingProgress progress={progress} />
           </div>
         )}
@@ -45,8 +45,8 @@ const Card: React.FC<CardProps> = ({ medium, progress = 70 }: CardProps) => {
           >
             {isMouseInside ? (
               <div>
-                <h1>{languages.length}</h1>
-                <Button text="edit" />
+                <div className="language">{languages.length} languages</div>
+                <Button text="Edit" />
               </div>
             ) : null}
           </div>

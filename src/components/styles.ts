@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import Button from "./Button";
 
 export const Loading = styled.div`
-    /* .loading-container{ */
         height: 20px;
         width: 75%;
         background-color: #e0e0de;
         border-radius: 50px;
         margin: 50px;
-    /* } */
     
     .filler {
+        display: flex;
+        align-items: center;
+        justify-content: left;
         height: 100%;
         background-color: purple;
         border-radius: inherit;
@@ -25,21 +25,20 @@ export const Loading = styled.div`
 `
 
 export const Wrap = styled.section`
-    display: inline-block;   
-    justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
     .cart-info{
         display: block;
         margin: 10px;
     }
 
-    /* .cart-container:hover .img {
-    opacity: 0.5;
-    } */
-
     .card-status {
-        position: relative;
+        display: flex;
+        align-items: center;
         justify-content: center;
+        position: relative;
         height: 75%;
         background-position: center;
         background-repeat: no-repeat;
@@ -49,10 +48,10 @@ export const Wrap = styled.section`
 
     .card-status.error {
         background-color: #FFD2D2;
-        align-items: center;
     }
 
     .card-status.transcribing {
+        flex-direction: column;
         opacity: 0.5;
     }
 
@@ -80,9 +79,34 @@ export const Wrap = styled.section`
             text-transform: capitalize;
         }
     }
+
+    .language {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 20px; left: 20px;
+        height: 30px;
+        width: 150px;
+        border: 1px;
+        border-radius: 10px;
+        background-color: white;
+
+    }
 `
 
 export const Buttons = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100px;    
     border: 1px;
-    border-radius: 50px;
+    border-radius: 20px;
+    background-color: white;
+    
+    p {
+        text-align: center;
+        font-size: 25px;
+    }
 `
