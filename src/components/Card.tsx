@@ -1,9 +1,7 @@
-import classNames from "classnames"
-import { initial } from "cypress/types/lodash"
 import React, { useState } from "react"
+import classNames from "classnames"
 import { IMedium } from "../types"
-import Button from "./Button"
-import LoadingProgress from "./LoadingProgress"
+import { Button, LoadingProgress } from "./index"
 import { Wrap } from "./styles"
 
 interface CardProps {
@@ -28,12 +26,15 @@ const Card: React.FC<CardProps> = ({ medium, progress = 70 }: CardProps) => {
           <div className={componentStyle}>{errorMessage}</div>
         )}
         {status === "transcribing" && (
-          <div
-            className={componentStyle}
-            style={{ backgroundImage: `url(${cover})` }}
-          >
-            <h1>Transcrining subtitles</h1>
-            <LoadingProgress progress={progress} />
+          <div className="card-transcribing">
+            <div
+              className={componentStyle}
+              style={{ backgroundImage: `url(${cover})` }}
+            />
+            <div className="load-transcribing">
+              <h1>Transcribing subtitles</h1>
+              <LoadingProgress progress={progress} />
+            </div>
           </div>
         )}
         {status === "ready" && (

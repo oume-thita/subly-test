@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react"
 import styled from "styled-components"
 import { fetchMedia } from "../api"
-import Card from "../components/Card"
-import Dropdown from "../components/Dropdown"
+import { Card, Dropdown } from "../components"
 import { IMedium } from "../types"
 
 const optionsLanguage = [
@@ -47,7 +46,7 @@ const HomePage = () => {
 
   return (
     <Wrapper>
-      <div className="card-section">
+      <div className="filter-section">
         <Dropdown
           label="Filter Languages"
           options={optionsLanguage}
@@ -61,10 +60,11 @@ const HomePage = () => {
           onChange={(v) => setStatus(v)}
         />
       </div>
-
-      {filterData.map((m: IMedium) => {
-        return <Card key={m.id} medium={m} />
-      })}
+      <div className="card-section">
+        {filterData.map((m: IMedium) => {
+          return <Card key={m.id} medium={m} />
+        })}
+      </div>
     </Wrapper>
   )
 }
@@ -72,13 +72,22 @@ const HomePage = () => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+
+  .filter-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+  }
 
   .card-section {
     display: flex;
     flex-direction: row;
-    margin-bottom: 200px;
+    flex-wrap: wrap;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 `
 

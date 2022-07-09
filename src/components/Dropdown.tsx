@@ -11,7 +11,12 @@ interface IDropdwnProps {
   onChange: (value: string) => void
 }
 
-const Dropdown = ({ label, options, value, onChange }: IDropdwnProps) => {
+const Dropdown: React.FC<IDropdwnProps> = ({
+  label,
+  options,
+  value,
+  onChange,
+}: IDropdwnProps) => {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange(event.target.value)
   }
@@ -19,7 +24,7 @@ const Dropdown = ({ label, options, value, onChange }: IDropdwnProps) => {
     <Dropdowns>
       <label>
         <h1>{label}</h1>
-        <select value={value} onChange={handleChange}>
+        <select className="select-filter" value={value} onChange={handleChange}>
           {options.map((option) => (
             <option value={option.value}>{option.label}</option>
           ))}
