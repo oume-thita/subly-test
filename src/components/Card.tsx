@@ -13,6 +13,7 @@ const Card: React.FC<CardProps> = ({ medium, progress = 70 }: CardProps) => {
   const { name, cover, languages, status, errorMessage } = medium
   const [isMouseInside, setIsMouseInside] = useState<boolean>()
 
+  //   set classname from states of Medium
   const componentStyle = classNames("card-status", {
     ready: status === "ready",
     error: status === "error",

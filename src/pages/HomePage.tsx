@@ -23,6 +23,7 @@ const HomePage = () => {
   const [value, setValue] = useState<string>(optionsLanguage[0].value)
   const [status, setStatus] = useState<string>(optionsStatus[0].value)
 
+  // fetch media from API
   const getMedia = async () => {
     const data = await fetchMedia()
     setMedium(data)
@@ -31,6 +32,7 @@ const HomePage = () => {
     getMedia()
   }, [])
 
+  // filter applied to status and langusges
   const filterData = useMemo(() => {
     return mediums.filter((d) => {
       let c = true
