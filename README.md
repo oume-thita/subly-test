@@ -1,8 +1,8 @@
 # React TypeScript subly test
 
-- This project a front-end challenge contributed by Subly UK LTD.
+- This project is a front-end challenge contributed by Subly UK LTD.
 
-The goal of this project is to provide a reuseable card component by fetching data from provided endpoint, using React and TypeScript.
+- The goal of this project is to provide a reuseable card component by fetching data from provided endpoint, using React and TypeScript.
 
 ## Built with
 
